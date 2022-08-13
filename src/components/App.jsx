@@ -3,7 +3,6 @@ import { Component } from "react"
 import { Statistics } from "./Statistics/Statistics.js"
 import { Section } from "./Section/Section.js"
 import { Notification } from "./Notification/Notification .js"
-import { GlobalStyle } from "./GlobalStyle.js"
 
 export class App extends Component {
   state = {
