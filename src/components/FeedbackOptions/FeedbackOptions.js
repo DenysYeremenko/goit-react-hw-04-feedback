@@ -4,7 +4,11 @@ import { FeedbackButton } from "./FeedbackOptions.styled";
 import PropTypes from 'prop-types';
 
 export class FeedbackOptions extends Component {
-    
+    static propTypes = {
+        options: PropTypes.arrayOf(PropTypes.string).isRequired,
+        onLeaveFeedback: PropTypes.func.isRequired
+    }
+
     render() {
         const {
             options,
@@ -12,14 +16,7 @@ export class FeedbackOptions extends Component {
         } = this.props
         
     return (<Box display="flex">
-       <FeedbackButton onClick={onLeaveFeedback}>{options[0]}</FeedbackButton>
-       <FeedbackButton onClick={onLeaveFeedback}>{options[1]}</FeedbackButton>   
-       <FeedbackButton onClick={onLeaveFeedback}>{options[2]}</FeedbackButton>            
+        {options.map(option => <FeedbackButton key={option} onClick={onLeaveFeedback}>{option.toUpperCase()}</FeedbackButton>)}    
     </Box>)
     }
-}
-
-FeedbackOptions.propTypes = {
-    options: PropTypes.array.isRequired,
-    onLeaveFeedback: PropTypes.func.isRequired
 }

@@ -8,12 +8,12 @@ export const FeedbackButton = styled.button`
     border-radius: 4px;
     background-color: ${(props) => {
         switch (props.children) {
-            case "Good":
+            case "GOOD":
                 return "green";
 
-            case "Neutral":
+            case "NEUTRAL":
                 return "yellow";
-            case "Bad":
+            case "BAD":
                 return "red";
             default:
                 ;
